@@ -1,4 +1,4 @@
-package learninggo
+package main
 
 import (
 	"encoding/json"
@@ -7,7 +7,6 @@ import (
 
 func main() {
 	http.HandleFunc("/doge", func(res http.ResponseWriter, req *http.Request) {
-		// res.Header().Set("Content-Type", "image/jpeg")
 		res.Write([]byte("<html><head></head><body>"))
 		for i := 0; i < 15; i++ {
 			doge, err := getDoge()
