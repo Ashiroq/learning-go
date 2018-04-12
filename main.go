@@ -12,8 +12,8 @@ func main() {
 		for i := 0; i < 15; i++ {
 			doge, err := getDoge()
 			if err == nil {
-				res.Write([]byte("<img src=\"" + doge.Url + "\" alt=\"\" width=\"150\" />"))
-				println(doge.Url)
+				res.Write([]byte("<img src=\"" + doge.URL + "\" alt=\"\" width=\"150\" />"))
+				println(doge.URL)
 			} else {
 				println(err)
 			}
@@ -24,8 +24,9 @@ func main() {
 	http.ListenAndServe("localhost:8000", nil)
 }
 
+// DogeData is test struct to learn go
 type DogeData struct {
-	Url string `json:"message"`
+	URL string `json:"message"`
 }
 
 func getDoge() (DogeData, error) {
